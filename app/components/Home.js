@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var GetWeatherForm = require('./GetWeatherForm');
+var GetWeatherFormContainer = require('../containers/GetWeatherFormContainer');
 
 function Home (props) {
   return (
@@ -8,7 +8,7 @@ function Home (props) {
       <div className="home">
         <div className="home-form">
           <h1 className="home-form__title">Enter a City and State</h1>
-          <GetWeatherForm />
+          <GetWeatherFormContainer />
         </div>
       </div>
     </div>

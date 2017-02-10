@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var GetWeatherForm = require('../components/GetWeatherForm');
+var GetWeatherFormContainer = require('./GetWeatherFormContainer');
 
 var MainContainer = React.createClass({
   render: function () {
@@ -13,7 +13,7 @@ var MainContainer = React.createClass({
                 <div className="logo">My Weather App</div>
               </div>
               <div className="col-sm-12 col-md-6">
-                <GetWeatherForm />
+                <GetWeatherFormContainer />
               </div>
             </div>
           </div>

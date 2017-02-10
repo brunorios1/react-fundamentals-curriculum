@@ -1,5 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Main = require('./containers/Main');
+var routes = require('./config/routes');
 
-ReactDOM.render(<Main />, document.getElementById('app'))
+ReactDOM.render(routes, document.getElementById('app'))

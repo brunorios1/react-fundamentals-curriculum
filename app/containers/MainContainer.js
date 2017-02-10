@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var HelloWorld = require('../components/HelloWorld');
 
-var Main = React.createClass({
+var MainContainer = React.createClass({
   render: function () {
     return (
       <div>
@@ -12,4 +12,4 @@ var Main = React.createClass({
   }
 })
 
-module.exports = Main;
+module.exports = MainContainer;

@@ -6,7 +6,8 @@ var MainContainer = React.createClass({
   render: function () {
     return (
       <div>
-        <HelloWorld />
+        <div className="header"></div>
+        {this.props.children}
       </div>
     )
   }

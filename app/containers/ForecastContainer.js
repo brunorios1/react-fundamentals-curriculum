@@ -6,21 +6,22 @@ var helpers = require('../utils/openweather');
 var ForecastContainer = React.createClass({
   getInitialState: function () {
     return {
-      isLoading: true
+      isLoading: true,
+      forecastWeather: []
     }
   },
   componentDidMount: function () {
     helpers.getForecastWeather(this.props.params.city)
-      .then(function(cityForecastWeather) {
-        console.log(cityForecastWeather);
+      .then(function(forecastWeatherObject) {
         this.setState({
-          isLoading: false
+          isLoading: false,
+          forecastWeather: forecastWeatherObject.data
         });
       }.bind(this))
   },
   render: function () {
     return (
-      <Forecast isLoading={this.state.isLoading} />
+      <Forecast isLoading={this.state.isLoading} forecastWeather={this.state.forecastWeather} />
     )
   }
 })

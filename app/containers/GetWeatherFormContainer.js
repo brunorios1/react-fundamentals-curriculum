@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var GetWeatherForm = require('../components/GetWeatherForm');
+var helpers = require('../utils/openweather');
 
 var GetWeatherFormContainer = React.createClass({
   getInitialState: function () {
@@ -14,7 +15,7 @@ var GetWeatherFormContainer = React.createClass({
     })
   },
   handleSubmitLocation: function (e) {
-    console.log(this.state.location);
+    console.log(helpers.getCityWeather(this.state.location));
   },
   render: function () {
     return (

@@ -4,6 +4,9 @@ var GetWeatherForm = require('../components/GetWeatherForm');
 var helpers = require('../utils/openweather');
 
 var GetWeatherFormContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function () {
     return {
       location: ''
@@ -15,7 +18,8 @@ var GetWeatherFormContainer = React.createClass({
     })
   },
   handleSubmitLocation: function (e) {
-    console.log(helpers.getCityWeather(this.state.location));
+    e.preventDefault();
+    this.context.router.push('/forecast/' + this.state.location)
   },
   render: function () {
     return (

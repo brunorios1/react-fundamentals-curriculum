@@ -2,11 +2,17 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 function Forecast (props) {
-  return (
-    <div>
-      Forecast component
-    </div>
-  )
+    if (props.isLoading === true) {
+      return (
+        <div>Loading...</div>
+      )
+    } else {
+      return (
+        <div>
+          Forecast component
+        </div>
+      )
+    }
 }
 
 module.exports = Forecast;

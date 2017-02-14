@@ -4,7 +4,7 @@ var PropTypes = React.PropTypes;
 
 function Day (props) {
   var iconID = props.dayData.weather[0].icon;
-  var imageUrl = "http://reactjsprogram.github.io/react-fundamentals-curriculum/app/images/weather-icons/" + iconID + ".svg";
+  var imageUrl = "./app/images/weather-icons/" + iconID + ".svg";
   var date = utils.getDate(props.dayData.dt);
 
   return (

@@ -2,7 +2,6 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var utils = require('../utils/utils');
 
-// TODO: create a new component for this ForecastItem, since it's being used twice.
 function Day (props) {
   var iconID = props.dayData.weather[0].icon;
   var imageUrl = "http://reactjsprogram.github.io/react-fundamentals-curriculum/app/images/weather-icons/" + iconID + ".svg";

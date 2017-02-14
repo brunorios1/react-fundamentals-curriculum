@@ -1,6 +1,6 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
 var Day = require('./Day');
+var PropTypes = React.PropTypes;
 
 function Forecast (props) {
   if (props.isLoading === true) {
@@ -22,6 +22,12 @@ function Forecast (props) {
       </div>
     )
   }
+}
+
+Forecast.PropTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  forecastWeather: PropTypes.object.isRequired,
+  onClickDetail: PropTypes.func.isRequired
 }
 
 module.exports = Forecast;

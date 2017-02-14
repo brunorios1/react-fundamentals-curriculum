@@ -1,5 +1,4 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
 var Day = require('./Day');
 var utils = require('../utils/utils');
 

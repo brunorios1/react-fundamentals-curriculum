@@ -1,11 +1,11 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
 var utils = require('../utils/utils');
+var PropTypes = React.PropTypes;
 
 function Day (props) {
   var iconID = props.dayData.weather[0].icon;
   var imageUrl = "http://reactjsprogram.github.io/react-fundamentals-curriculum/app/images/weather-icons/" + iconID + ".svg";
-  var date= utils.getDate(props.dayData.dt);
+  var date = utils.getDate(props.dayData.dt);
 
   return (
     <div className="forecast-item" onClick={props.onClickDetail}>
@@ -13,6 +13,14 @@ function Day (props) {
       <div className="forecast-item__date">{date}</div>
     </div>
   )
+}
+
+Day.PropTypes = {
+  dayData: PropTypes.shape({
+    dt: PropTypes.number.isRequired,
+    weather: PropTypes.array.isRequired
+  }).isRequired,
+  onClickDetail: PropTypes.func
 }
 
 module.exports = Day;

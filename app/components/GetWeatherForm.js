@@ -1,5 +1,5 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
+var PropTypes = React.PropTypes;
 
 function GetWeatherForm (props) {
   return (
@@ -10,6 +10,12 @@ function GetWeatherForm (props) {
       </form>
     </div>
   )
+}
+
+GetWeatherForm.PropTypes = {
+  onUpdateLocation: PropTypes.func.isRequired,
+  onSubmitLocation: PropTypes.func.isRequired,
+  location: PropTypes.string.isRequired
 }
 
 module.exports = GetWeatherForm;

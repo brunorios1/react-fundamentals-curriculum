@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Day = require('./Day');
+var utils = require('../utils/utils');
 
 function Detail (props) {
   return (
@@ -8,9 +9,9 @@ function Detail (props) {
       <h1>{props.location.state.detail[0]}</h1>
       <Day dayData={props.location.state.detail[1]} />
       <div><strong>{props.location.state.detail[1].weather[0].description}</strong></div>
-      <div>Min temp: {props.location.state.detail[1].temp.min} Farenheit</div>
-      <div>Max temp: {props.location.state.detail[1].temp.max} Farenheit</div>
-      <div>Humidity: {props.location.state.detail[1].humidity} Farenheit</div>
+      <div>Min temp: {utils.convertTemp(props.location.state.detail[1].temp.min)} degrees</div>
+      <div>Max temp: {utils.convertTemp(props.location.state.detail[1].temp.max)} degrees</div>
+      <div>Humidity: {props.location.state.detail[1].humidity}</div>
     </div>
   )
 }

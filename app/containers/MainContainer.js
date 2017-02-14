@@ -18,9 +18,7 @@ var MainContainer = React.createClass({
             </div>
           </div>
         </div>
-        <div className="container-fluid">
-          {this.props.children}
-        </div>
+        {this.props.children}
       </div>
     )
   }

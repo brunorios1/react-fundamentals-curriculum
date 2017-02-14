@@ -1,19 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var utils = require('../utils/utils');
-
-function ForecastItem (props) {
-  var iconID = props.dayData.weather[0].icon;
-  var imageUrl = "http://reactjsprogram.github.io/react-fundamentals-curriculum/app/images/weather-icons/" + iconID + ".svg";
-  var date= utils.getDate(props.dayData.dt);
-
-  return (
-    <div className="forecast-item" onClick={props.onClickDetail}>
-      <img src={imageUrl} className="img-responsive" />
-      <div className="forecast-item__date">{date}</div>
-    </div>
-  )
-}
+var Day = require('./Day');
 
 function Forecast (props) {
   if (props.isLoading === true) {
@@ -29,7 +16,7 @@ function Forecast (props) {
         </div>
         <div className="forecast-items">
           {props.forecastWeather.list.map(function (listItem) {
-            return <ForecastItem key={listItem.dt} dayData={listItem} onClickDetail={props.onClickDetail.bind(null, listItem)} />
+            return <Day key={listItem.dt} dayData={listItem} onClickDetail={props.onClickDetail.bind(null, props.forecastWeather.city.name, listItem)} />
           })}
         </div>
       </div>

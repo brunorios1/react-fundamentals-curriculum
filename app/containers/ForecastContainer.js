@@ -13,11 +13,11 @@ var ForecastContainer = React.createClass({
       forecastWeather: []
     }
   },
-  handleClickDetail: function (detail) {
+  handleClickDetail: function (city, detail) {
     this.context.router.push({
       pathname: '/detail/' + this.props.params.city,
       state: {
-        detail: detail
+        detail: [city, detail]
       }
     })
   },
